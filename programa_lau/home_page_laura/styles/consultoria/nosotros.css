@@ -1,0 +1,93 @@
+@import url("../general.css");
+
+/* ================================================================
+   NOSOTROS — Stat chips
+   ================================================================ */
+.stat-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-chip {
+  text-align: center;
+  padding: 0.85rem;
+  background: rgba(30,111,163,0.06);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(30,111,163,0.1);
+  transition: background var(--dur-base), border-color var(--dur-base);
+}
+.stat-chip:hover { background: rgba(30,111,163,0.1); border-color: rgba(30,111,163,0.2); }
+
+.stat-chip-val {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--blue-corp);
+  line-height: 1;
+}
+.stat-chip-lbl {
+  font-size: 0.68rem;
+  color: var(--gray-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.3rem;
+}
+
+/* Accent bars for mission/vision cards */
+.accent-card {
+  background: var(--surface-subtle);
+  border: 1.5px solid rgba(107,102,97,0.25);
+  border-radius: var(--r-lg);
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.accent-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
+}
+.accent-card.blue::before  { background: linear-gradient(180deg, #6B6661,  #8B8581); }
+.accent-card.sky::before   { background: linear-gradient(180deg, var(--bg-sky),     var(--blue-light)); }
+
+.accent-card h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue-ink);
+  margin-bottom: 0.5rem;
+}
+.accent-card p {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Responsive para simetría */
+@media (max-width: 768px) {
+  .stat-chips {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .accent-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-chips {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-chips {
+    grid-template-columns: 1fr;
+  }
+}

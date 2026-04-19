@@ -1,0 +1,87 @@
+@import url("general.css");
+
+/* ================================================================
+   QUICK STRIP
+   ================================================================ */
+.quick-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.q-tile {
+  width: 100%;
+  min-height: 100px;
+  background: var(--surface);
+  border: 1.5px solid rgba(107,102,97,0.25);
+  border-radius: var(--r-lg);
+  padding: 0.9rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--dur-slow) var(--ease-expo);
+  position: relative;
+  overflow: hidden;
+}
+.q-tile::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6B6661, #8B8581);
+  transform: scaleX(0);
+  transition: transform var(--dur-base) var(--ease-expo);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+}
+.q-tile:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(107,102,97,0.4); background: var(--surface-subtle); }
+.q-tile:hover::after { transform: scaleX(1); }
+
+.q-icon {
+  width: 38px; height: 38px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  background: rgba(30,111,163,0.12);
+  color: #1E6FA3;
+  transition: transform var(--dur-base) var(--ease-expo), background var(--dur-base);
+}
+.q-tile:hover .q-icon { transform: scale(1.1) rotate(-4deg); background: rgba(30,111,163,0.22); }
+
+.q-tile span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1E6FA3;
+  line-height: 1.3;
+}
+
+/* Responsive para simetría */
+@media (max-width: 1024px) {
+  .quick-strip {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .q-tile {
+    min-height: 90px;
+    padding: 0.9rem 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-strip {
+    grid-template-columns: 1fr;
+  }
+}

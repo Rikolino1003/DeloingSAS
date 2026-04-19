@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="styles/general.css" />
+<link rel="stylesheet" href="styles/header.css" />
+<!-- ================================================================
+     SECCIÓN: HEADER / NAVEGACIÓN MODERNA
+     Archivo: sections/header.html
+================================================================ -->
+<header>
+  <nav>
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Deloing S.A.S" class="logo-img">
+      <strong>Deloing S.A.S</strong>
+    </a>
+
+    <!-- CENTRO: MENÚ PRINCIPAL -->
+    <div class="nav-center">
+      <!-- Dropdown Inicio (solo en index) -->
+      <div class="nav-dropdown" id="nav-dropdown-inicio">
+        <button class="nav-dropdown-btn" onclick="toggleDropdown(event)">
+          <span>Inicio</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="#servicios" class="nav-jump">Servicios</a>
+          <a href="#sectores" class="nav-jump">Sectores</a>
+          <a href="#nosotros" class="nav-jump">Nosotros</a>
+          <a href="#testimonios" class="nav-jump">Testimonios</a>
+          <a href="#recursos" class="nav-jump">Recursos</a>
+          <a href="#nuestro-negocio" class="nav-jump">Nuestro Negocio</a>
+        </div>
+      </div>
+
+      <!-- Enlaces Directos a Módulos -->
+      <a href="modulos/trabaja-con-nosotros.html" class="nav-module-link" data-module="trabaja-con-nosotros">Trabaja con nosotros</a>
+      <a href="modulos/contactanos.html" class="nav-module-link" data-module="contactanos">Contáctanos</a>
+      <a href="modulos/nosotros.html" class="nav-module-link" data-module="nosotros">Nosotros</a>
+      <a href="modulos/indicadores-financieros.html" class="nav-module-link" data-module="indicadores">Indicadores Financieros</a>
+    </div>
+
+    <!-- DERECHA: LOGO EMPRESARIAL -->
+    <div class="nav-right">
+      <a href="#" class="nav-logo-link" title="Deloing S.A.S">
+        <img src="img/logempresarial.png" alt="Deloing S.A.S Logo" class="nav-logo-img">
+      </a>
+    </div>
+  </nav>
+  
+  <!-- BOTÓN FLOTANTE (en todas las páginas) -->
+  <div class="floating-index-btn" id="floating-index-btn" title="Menú de navegación">
+    <i class="fas fa-list"></i>
+  </div>
+  
+  <!-- Script para detectar módulo activo -->
+  <script src="scripts/header-active-module.js"></script>
+</header>

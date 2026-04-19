@@ -1,0 +1,83 @@
+/* Estilos para la página de Trabaja con Nosotros */
+
+.empleos-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  border-left: 4px solid #28a745;
+}
+
+.empleos-section h2 {
+  color: #28a745;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.empleos-section p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.empleos-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.empleos-section ul li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  color: #333;
+  font-size: 1rem;
+  position: relative;
+}
+
+.empleos-section ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.empleos-section strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.empleos-section a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #e7f3ff;
+  border-radius: 5px;
+}
+
+.empleos-section a:hover {
+  background: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .empleos-section {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .empleos-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .empleos-section p,
+  .empleos-section ul li {
+    font-size: 0.95rem;
+  }
+}

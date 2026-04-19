@@ -1,0 +1,728 @@
+@import url("../general.css");
+
+/* ================================================================
+   EMPLEOS - TRABAJA CON NOSOTROS
+================================================================ */
+
+.module-hero {
+  background: linear-gradient(135deg, #1E1E1E 0%, #1a3a52 60%, #0f2738 100%);
+  padding: 4rem 5rem 3rem;
+  color: #D4D4D4;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 75% 16%, rgba(212, 212, 212, 0.08), transparent 55%),
+    radial-gradient(circle at 18% 78%, rgba(30, 111, 163, 0.15), transparent 45%);
+  pointer-events: none;
+}
+
+.module-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.module-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.module-hero h1 span {
+  color: #1E6FA3;
+}
+
+.module-hero p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #BEBEBE;
+  max-width: 600px;
+}
+
+/* ================================================================
+   SECCIÓN: POR QUÉ TRABAJAR CON NOSOTROS
+================================================================ */
+
+.why-work-section {
+  padding: 3.5rem 5rem;
+  background: #F8F9FA;
+}
+
+.why-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: white;
+  border: 1px solid rgba(107, 102, 97, 0.2);
+  border-radius: 1rem;
+  padding: 2rem 1.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1E6FA3, #0B5A8F);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(30, 111, 163, 0.15);
+  border-color: #1E6FA3;
+}
+
+.why-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 0.8rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   SECCIÓN: SECTION HEADER
+================================================================ */
+
+.sec-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sec-header-eyebrow {
+  display: inline-block;
+  background: rgba(30, 111, 163, 0.1);
+  color: #1E6FA3;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sec-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1E1E1E;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.sec-header h2 span {
+  color: #1E6FA3;
+}
+
+.sec-header p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   SECCIÓN: NUESTRAS VACANTES (OFERTAS)
+================================================================ */
+
+.vacantes-section {
+  padding: 4rem 5rem;
+  background: white;
+}
+
+.vacantes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.vacancy-card {
+  background: white;
+  border: 1px solid rgba(107, 102, 97, 0.2);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.vacancy-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(30, 111, 163, 0.2);
+  border-color: #1E6FA3;
+}
+
+.vacancy-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1E6FA3, #0B5A8F);
+}
+
+.vacancy-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vacancy-tag {
+  display: inline-block;
+  background: rgba(30, 111, 163, 0.1);
+  color: #1E6FA3;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+  width: fit-content;
+}
+
+.vacancy-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1E1E1E;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.vacancy-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.vacancy-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vacancy-detail i {
+  color: #1E6FA3;
+  font-size: 0.9rem;
+  min-width: 16px;
+}
+
+.vacancy-description {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.vacancy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1E6FA3;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.vacancy-btn:hover {
+  background: #0B5A8F;
+  transform: translateX(4px);
+}
+
+/* ================================================================
+   SECCIÓN: BENEFICIOS
+================================================================ */
+
+.benefits-section {
+  padding: 4rem 5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid rgba(30, 111, 163, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefit-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(30, 111, 163, 0.12);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 0.8rem;
+}
+
+.benefit-item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   SECCIÓN: CTA FINAL
+================================================================ */
+
+.cta-section {
+  padding: 3.5rem 5rem;
+  background: linear-gradient(135deg, #1E6FA3 0%, #0B5A8F 100%);
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: white;
+  color: #1E6FA3;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================================================
+   MODAL - DETALLES DE VACANTE
+================================================================ */
+
+.vacancy-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.vacancy-modal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.vacancy-modal-content {
+  background: white;
+  border-radius: 1.5rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-in-out;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.vacancy-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #1E1E1E;
+}
+
+.vacancy-modal-close:hover {
+  background: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+.vacancy-modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #1E6FA3, #0B5A8F);
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.vacancy-modal-body {
+  padding: 2.5rem;
+}
+
+.vacancy-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.vacancy-modal-tag {
+  display: inline-block;
+  background: rgba(30, 111, 163, 0.1);
+  color: #1E6FA3;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.vacancy-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1E1E1E;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.vacancy-modal-section {
+  margin-bottom: 2.5rem;
+}
+
+.vacancy-modal-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1E6FA3;
+}
+
+.vacancy-modal-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.vacancy-modal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vacancy-modal-detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1E6FA3;
+}
+
+.vacancy-modal-detail-value {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vacancy-modal-detail-value i {
+  color: #1E6FA3;
+}
+
+.vacancy-modal-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.vacancy-modal-requirements {
+  background: rgba(30, 111, 163, 0.05);
+  padding: 1.5rem;
+  border-left: 4px solid #1E6FA3;
+  border-radius: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.vacancy-modal-requirements h3 {
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.vacancy-modal-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vacancy-modal-requirements li {
+  padding: 0.5rem 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vacancy-modal-requirements li::before {
+  content: '✓';
+  color: #1E6FA3;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.vacancy-modal-cta {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.vacancy-modal-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.vacancy-modal-btn-primary {
+  background: #1E6FA3;
+  color: white;
+}
+
+.vacancy-modal-btn-primary:hover {
+  background: #0B5A8F;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(30, 111, 163, 0.3);
+}
+
+.vacancy-modal-btn-secondary {
+  background: #f0f0f0;
+  color: #1E1E1E;
+  border: 2px solid #e0e0e0;
+}
+
+.vacancy-modal-btn-secondary:hover {
+  background: #e8e8e8;
+  border-color: #1E6FA3;
+}
+
+/* ================================================================
+   RESPONSIVE - MODAL
+================================================================ */
+
+@media (max-width: 768px) {
+  .vacancy-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .vacancy-modal-body {
+    padding: 1.5rem;
+  }
+
+  .vacancy-modal-title {
+    font-size: 1.4rem;
+  }
+
+  .vacancy-modal-details {
+    grid-template-columns: 1fr;
+  }
+
+  .vacancy-modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .vacancy-modal-image {
+    height: 200px;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE GENERAL
+================================================================ */
+
+/* Desktop: 3 columnas */
+@media (min-width: 1201px) {
+  .vacantes-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .vacantes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Móvil: 1 columna */
+@media (max-width: 768px) {
+  .module-hero,
+  .why-work-section,
+  .vacantes-section,
+  .benefits-section,
+  .cta-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .module-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .sec-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .vacantes-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .benefits-grid,
+  .why-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vacancy-image {
+    height: 150px;
+  }
+}

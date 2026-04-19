@@ -1,0 +1,122 @@
+/* Estilos para la página de Indicadores Financieros */
+
+.indicadores-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+}
+
+.indicadores-section h2 {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.75rem;
+}
+
+.indicadores-section p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.indicadores-section em {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.indicadores-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.indicadores-section ul li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.indicadores-section ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Tabla de indicadores */
+.indicadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.indicadores-table th {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.indicadores-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  color: #333;
+  font-size: 1rem;
+}
+
+.indicadores-table tr:last-child td {
+  border-bottom: none;
+}
+
+.indicadores-table tr:hover {
+  background: #f8f9fa;
+}
+
+.indicadores-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+.positivo {
+  color: #28a745;
+  font-variant-numeric: tabular-nums;
+}
+
+.negativo {
+  color: #dc3545;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .indicadores-section {
+    padding: 1.5rem;
+  }
+
+  .indicadores-table {
+    font-size: 0.9rem;
+  }
+
+  .indicadores-table th,
+  .indicadores-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .indicadores-section h2 {
+    font-size: 1.25rem;
+  }
+}

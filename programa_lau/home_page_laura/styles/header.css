@@ -1,0 +1,419 @@
+@import url("general.css");
+
+/* ================================================================
+   HEADER MODERNO Y LIMPIO
+   ================================================================ */
+header {
+  background: linear-gradient(135deg, #1E6FA3 0%, #1B5A88 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(30,111,163,0.15);
+  transition: transform var(--dur-base) var(--ease-smooth), opacity var(--dur-base) ease;
+}
+
+.hide-navbar {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 2rem;
+  height: 64px;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 0 1.5rem 0 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  height: 100%;
+  position: absolute;
+  left: 2rem;
+}
+
+.logo img.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.logo strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-center a,
+.nav-dropdown-btn {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+  white-space: nowrap;
+  position: relative;
+  background: transparent;
+  border: none;
+}
+
+.nav-center a:hover,
+.nav-dropdown-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+}
+
+.nav-center a.active {
+  background: rgba(255,255,255,0.25);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-bottom: 3px solid #FFFFFF;
+  padding-bottom: calc(0.5rem - 3px);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  right: 2rem;
+}
+
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-smooth);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.nav-logo-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.nav-logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+
+/* Elementos removidos - ocultos */
+.btn-outline,
+.btn-primary,
+.nav-bell,
+.avatar {
+  display: none !important;
+}
+
+/* ================================================================
+   DROPDOWN DINÁMICO
+   ================================================================ */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.nav-dropdown-btn i {
+  font-size: 0.7rem;
+  transition: transform var(--dur-base);
+}
+
+.nav-dropdown-btn.active i {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--r-sm);
+  min-width: 200px;
+  margin-top: 0.6rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity var(--dur-fast), visibility var(--dur-fast), transform var(--dur-fast);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.nav-dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  color: #1E6FA3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  transition: all var(--dur-fast);
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #F5F5F5;
+  color: #0B5A8F;
+  padding-left: 1.5rem;
+}
+
+/* ================================================================
+   BOTÓN FLOTANTE: ÍNDICE (tipo WhatsApp)
+   ================================================================ */
+.floating-index-btn {
+  position: fixed;
+  bottom: 220px;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #1E6FA3, #1B5A88);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(30,111,163,0.3);
+  transition: transform var(--dur-base) var(--ease-smooth), box-shadow var(--dur-base);
+  border: none;
+  padding: 0;
+}
+
+.floating-index-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(30,111,163,0.4);
+}
+
+.floating-index-btn.active {
+  transform: scale(1.05) rotate(-90deg);
+  background: linear-gradient(135deg, #1E6FA3 0%, #0B5A8F 100%);
+  box-shadow: 0 8px 24px rgba(30, 111, 163, 0.5);
+}
+
+/* MENÚ FLOTANTE */
+.floating-menu {
+  position: fixed;
+  bottom: 220px;
+  right: 2rem;
+  width: 220px;
+  max-height: 70vh;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFB 100%);
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7) translateY(40px) rotate(-5deg);
+  transition: opacity 0.3s ease, 
+              visibility 0.3s ease, 
+              transform 0.3s ease,
+              background 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.floating-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0) rotate(0deg);
+  background: linear-gradient(135deg, #1E6FA3 0%, #0B5A8F 100%);
+  border-color: #0B5A8F;
+  box-shadow: 0 25px 75px rgba(30, 111, 163, 0.4),
+              0 0 50px rgba(30, 111, 163, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.floating-menu h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 1rem 1rem 0.6rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.floating-menu h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.floating-menu-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  transition: all 0.25s ease;
+  z-index: 10;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.floating-menu-close:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.floating-menu nav {
+  display: flex !important;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+  flex: 1;
+  gap: 0;
+}
+
+.floating-menu-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.25s ease;
+  border-left: 4px solid transparent;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-menu-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: -1;
+}
+
+.floating-menu-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-left-color: #FFFFFF;
+  padding-left: 1.2rem;
+  font-weight: 600;
+}
+
+.floating-menu-link:hover::before {
+  transform: translateX(0);
+}
+
+body.floating-menu-open::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 900px) {
+  nav {
+    padding: 0.75rem 1rem;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    border-right: none;
+    padding: 0;
+  }
+
+  .nav-center {
+    flex: 0 0 100%;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem 0;
+    display: none;
+  }
+
+  .nav-center.mobile-open {
+    display: flex;
+  }
+
+  .nav-center a,
+  .nav-dropdown-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    text-align: left;
+  }
+}

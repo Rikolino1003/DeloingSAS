@@ -1,0 +1,127 @@
+/* ================================================================
+   GALERÍA — Grid de imágenes destacadas (sidebar)
+   Archivo: styles/galeria.css
+================================================================ */
+
+/* Layout de dos columnas: galería sidebar + contenido principal */
+.page-with-sidebar {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.sidebar-galeria {
+  position: sticky;
+  top: 1rem;
+}
+
+.galeria {
+  padding: 0;
+  background: transparent;
+  border-right: 1px solid var(--gray-light);
+  padding-right: 1.25rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+  max-width: 100%;
+}
+
+.galeria-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  background: var(--surface-subtle);
+  border-radius: var(--r-md);
+}
+
+.galeria-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.galeria-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--gray-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Responsivo: en pantallas pequeñas, cambiar a stack vertical */
+@media (max-width: 1200px) {
+  .page-with-sidebar {
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+  }
+  .sidebar-galeria {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-with-sidebar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .sidebar-galeria {
+    position: relative;
+    top: auto;
+  }
+
+  .galeria {
+    padding: 1.25rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-light);
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+  
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .galeria-card {
+    padding: 0.75rem;
+  }
+  
+  .galeria-desc {
+    font-size: 0.75rem;
+  }
+}

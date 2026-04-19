@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empresa Corporativa — Soluciones Empresariales</title>
+  <!-- Font Awesome para iconos profesionales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Fuentes: Sora + Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles/general.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/galeria.css" />
+  <link rel="stylesheet" href="styles/acciones-rapidas.css" />
+  <link rel="stylesheet" href="styles/servicios.css" />
+  <link rel="stylesheet" href="styles/modulos/diapositiva-carousel.css" />
+  <link rel="stylesheet" href="styles/consultoria/sectores.css" />
+  <link rel="stylesheet" href="styles/consultoria/testimonios.css" />
+  <link rel="stylesheet" href="styles/consultoria/recursos.css" />
+  <link rel="stylesheet" href="styles/consultoria/nosotros.css" />
+  <link rel="stylesheet" href="styles/consultoria/ayuda.css" />
+  <link rel="stylesheet" href="styles/consultoria/footer.css" />
+</head>
+<body>
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<div data-include="sections/header.html" class="section-placeholder"></div>
+
+<!-- ================================================================
+     HERO — Full-bleed dashboard hero
+================================================================ -->
+<div data-include="sections/hero.html" class="section-placeholder"></div>
+
+<!-- ================================================================
+     PAGE BODY
+================================================================ -->
+<div class="page-body">
+
+  <!-- GALERÍA SIDEBAR -->
+  <div class="page-with-sidebar">
+    <aside class="sidebar-galeria">
+      <div data-include="sections/galeria.html" class="section-placeholder"></div>
+    </aside>
+    
+    <main class="main-content">
+      <!-- GALERÍA DE NEGOCIOS (DIAPOSITIVAS) -->
+      <div data-include="sections/consultoria/cta.html" class="section-placeholder"></div>
+
+      <!-- ACCIONES RÁPIDAS (SERVICIOS) -->
+      <section id="servicios">
+        <div data-include="sections/acciones-rapidas.html" class="section-placeholder"></div>
+      </section>
+
+      <!-- SECTORES -->
+      <section id="sectores">
+        <div data-include="sections/consultoria/sectores.html" class="section-placeholder"></div>
+      </section>
+
+      <!-- TESTIMONIOS + RECURSOS -->
+      <div class="grid-60-40" id="testimonios">
+        <div data-include="sections/consultoria/testimonios.html" class="section-placeholder"></div>
+        <section id="recursos">
+          <div data-include="sections/consultoria/recursos.html" class="section-placeholder"></div>
+        </section>
+      </div>
+
+      <!-- NOSOTROS + AYUDA -->
+      <div class="grid-2" id="nosotros">
+        <div data-include="sections/consultoria/nosotros.html" class="section-placeholder"></div>
+        <div data-include="sections/consultoria/ayuda.html" class="section-placeholder"></div>
+      </div>
+    </main>
+  </div><!-- /page-with-sidebar -->
+
+</div><!-- /page-body -->
+
+
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" title="Volver arriba">↑</button>
+
+<!-- BOTÓN FLOTANTE + MENÚ (SOLO INDEX) -->
+<div class="floating-index-btn" id="floating-index-btn" title="Menú de navegación">
+  <i class="fas fa-list"></i>
+</div>
+
+<div class="floating-menu" id="floating-menu">
+  <div class="floating-menu-close" id="floating-menu-close">✕</div>
+  
+  <h3>Secciones</h3>
+  <nav class="floating-menu-sections">
+    <a href="#servicios" class="floating-menu-link" data-scroll="servicios">📊 Servicios</a>
+    <a href="#sectores" class="floating-menu-link" data-scroll="sectores">🌍 Sectores</a>
+    <a href="#testimonios" class="floating-menu-link" data-scroll="testimonios">⭐ Testimonios</a>
+    <a href="#nosotros" class="floating-menu-link" data-scroll="nosotros">👥 Nosotros</a>
+    <a href="#recursos" class="floating-menu-link" data-scroll="recursos">📚 Recursos</a>
+  </nav>
+  
+  <h3 style="margin-top: 1.5rem;">Módulos</h3>
+  <nav class="floating-menu-modules">
+    <a href="modulos/contactanos.html" class="floating-menu-link">📧 Contáctanos</a>
+    <a href="modulos/nosotros.html" class="floating-menu-link">ℹ️ Nosotros</a>
+    <a href="modulos/indicadores-financieros.html" class="floating-menu-link">📈 Indicadores</a>
+    <a href="modulos/trabaja-con-nosotros.html" class="floating-menu-link">💼 Trabaja con Nosotros</a>
+  </nav>
+</div>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer id="footer">
+  <div data-include="sections/consultoria/footer.html" class="section-placeholder"></div>
+</footer>
+<!-- SCRIPTS -->
+<script src="scripts/header.js"></script>
+<script src="script.js"></script>
+</html>

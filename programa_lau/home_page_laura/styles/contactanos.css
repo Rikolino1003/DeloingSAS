@@ -1,0 +1,125 @@
+/* Estilos para la página de Contáctanos */
+
+.contacto-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.contacto-section h2 {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.contacto-section h3 {
+  color: #495057;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.contacto-section p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contacto-section a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contacto-section a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.contacto-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.contacto-section ul li {
+  padding: 0.5rem 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.social-links li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #e7f3ff;
+  border-radius: 5px;
+  margin: 0.25rem 0;
+  transition: all 0.3s ease;
+}
+
+.social-links li a:hover {
+  background: #007bff;
+  color: white;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.contact-form button {
+  padding: 1rem;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contacto-section {
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    gap: 0.75rem;
+  }
+
+  .social-links li a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

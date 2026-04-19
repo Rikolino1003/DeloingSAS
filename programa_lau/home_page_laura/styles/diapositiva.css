@@ -1,0 +1,171 @@
+/* Estilos para la página de Diapositiva */
+
+.slide-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.slide-content {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-content h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.slide-content .subtitle {
+  font-size: 1.3rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.slide-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border-left: 5px solid #28a745;
+}
+
+.slide-info p {
+  margin: 0.75rem 0;
+  color: #333;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.slide-content h2 {
+  color: #495057;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.servicios-slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.servicios-slide span {
+  background: linear-gradient(135deg, #e7f3ff 0%, #d1e7ff 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  color: #0056b3;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.servicios-slide span:hover {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.propuesta-valor {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 5px solid #ffc107;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.propuesta-valor p {
+  color: #495057;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .slide-container {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .slide-content {
+    padding: 1.5rem;
+  }
+
+  .slide-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .slide-content .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .servicios-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-info p {
+    font-size: 0.95rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .propuesta-valor p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-content h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .slide-content .subtitle {
+    font-size: 1rem;
+  }
+
+  .slide-content {
+    padding: 1rem;
+  }
+
+  .slide-info {
+    padding: 1rem;
+  }
+
+  .slide-info p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+}

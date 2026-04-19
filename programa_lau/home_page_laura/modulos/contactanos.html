@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contáctanos - Deloing S.A.S</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/header.css" />
+  <link rel="stylesheet" href="../styles/modulos/contactanos.css" />
+</head>
+<body>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Contenido principal -->
+  <main id="main-content" class="page-body">
+    <section class="module-header">
+      <h1>Contáctanos</h1>
+      <p>Ponte en contacto con nosotros para conocer nuestras soluciones.</p>
+    </section>
+
+    <section class="container">
+      <section class="contacto-section">
+        <h2>Sede Principal</h2>
+        <p><strong>Dirección:</strong> Carrera 106 #15A – 25, Zona Franca, Bogotá D.C., Colombia</p>
+        
+        <h3>Teléfonos</h3>
+        <ul>
+          <li>📞 601 390 7688</li>
+          <li>📞 318 791 3360</li>
+        </ul>
+        
+        <h3>Correo Electrónico</h3>
+        <p>📧 <a href="mailto:talentohumano@deloing.com">talentohumano@deloing.com</a></p>
+        
+        <h3>Redes Sociales</h3>
+        <ul class="social-links">
+          <li><a href="https://facebook.com/deloing" target="_blank">📘 Facebook: Deloing Holding SAS</a></li>
+          <li><a href="https://instagram.com/deloing.sas" target="_blank">📷 Instagram: @deloing.sas</a></li>
+          <li><a href="https://linkedin.com/company/deloing-sas" target="_blank">💼 LinkedIn: Deloing SAS</a></li>
+        </ul>
+      </section>
+      
+      <section class="contacto-section">
+        <h2>Formulario de Contacto</h2>
+        <p>¿Tienes preguntas o necesitas una cotización? Completa el siguiente formulario y nos pondremos en contacto contigo pronto.</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Tu nombre" required>
+          <input type="email" placeholder="Tu correo" required>
+          <input type="tel" placeholder="Tu teléfono">
+          <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </section>
+
+      <div class="nav-buttons"></div>
+    </section>
+  </main>
+
+  <!-- FLOATING MENU - MÓDULOS -->
+  <div class="floating-menu" id="floating-menu">
+    <div class="floating-menu-close" id="floating-menu-close">✕</div>
+    <h3>Módulos</h3>
+    <nav class="floating-menu-modules">
+      <a href="../index.html" class="floating-menu-link">🏠 Inicio</a>
+      <a href="nosotros.html" class="floating-menu-link">ℹ️ Nosotros</a>
+      <a href="indicadores-financieros.html" class="floating-menu-link">📈 Indicadores</a>
+      <a href="trabaja-con-nosotros.html" class="floating-menu-link">💼 Trabaja con Nosotros</a>
+    </nav>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Volver arriba">↑</button>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="../scripts/load-header-footer.js"></script>
+  <script src="../scripts/header-module-adapter.js"></script>
+  <script src="../scripts/module-navigation.js"></script>
+  <script src="../scripts/floating-menu.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

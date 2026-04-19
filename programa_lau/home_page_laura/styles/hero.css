@@ -1,0 +1,412 @@
+@import url("general.css");
+
+/* ================================================================
+   HERO - CUSTOM PROPERTIES & OPTIMIZATION
+   ================================================================ */
+
+:root {
+  --hero-bg-1:       #1E1E1E;
+  --hero-bg-2:       #252526;
+  --hero-bg-3:       #2B2B2B;
+  --hero-accent:     #6B6661;
+  --hero-text:       #D4D4D4;
+  --hero-muted:      #BEBEBE;
+  --hero-border:     rgba(212, 212, 212, 0.35);
+  --hero-border-alt: rgba(107, 102, 97, 0.5);
+  --hero-glass:      rgba(36, 36, 36, 0.72);
+}
+
+/* ================================================================
+   HERO CONTAINER
+   ================================================================ */
+
+.hero {
+  background: linear-gradient(130deg, var(--hero-bg-1), var(--hero-bg-2) 30%, var(--hero-bg-3) 60%, var(--hero-accent));
+  padding: 6.5rem 5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--hero-text);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 75% 16%, rgba(212, 212, 212, 0.08), transparent 55%),
+    radial-gradient(circle at 18% 78%, rgba(107, 102, 97, 0.08), transparent 45%);
+  pointer-events: none;
+}
+
+/* ================================================================
+   HERO DECORATIVE ELEMENTS
+   ================================================================ */
+
+.hero-line {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--hero-accent), var(--hero-text), var(--hero-accent), transparent);
+}
+
+.hero-logo {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.85;
+  z-index: 10;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+.hero-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--blue-light);
+  top: -80px;
+  right: 10%;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 180px;
+  height: 180px;
+  background: var(--bg-sky);
+  bottom: -40px;
+  right: 30%;
+  animation: floatOrb 6s ease-in-out infinite 2s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* ================================================================
+   HERO CONTENT LAYOUT
+   ================================================================ */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-text { grid-column: 2; }
+.hero-visual { grid-column: 1; grid-row: 1; }
+.hero-kpis { grid-column: 1 / -1; margin-top: 1rem; }
+
+/* ================================================================
+   HERO TEXT ELEMENTS
+   ================================================================ */
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--hero-glass);
+  border: 1px solid var(--hero-border);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--r-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--hero-text);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1rem;
+}
+
+.hero-eyebrow i {
+  font-size: 0.65rem;
+  color: var(--hero-accent);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--hero-text);
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 span {
+  color: var(--hero-accent);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #E0E0E0;
+  max-width: 520px;
+  margin-bottom: 1rem;
+}
+
+/* ================================================================
+   HERO BUTTONS
+   ================================================================ */
+
+.hero-btns {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-main,
+.hero-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  padding: 0.72rem 1.4rem;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--dur-base) var(--ease-smooth),
+              box-shadow var(--dur-base) var(--ease-smooth),
+              background var(--dur-base) var(--ease-smooth),
+              border-color var(--dur-base) var(--ease-smooth);
+}
+
+.hero-btn-main {
+  background: #1E6FA3;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 10px 30px rgba(30, 111, 163, 0.3);
+}
+
+.hero-btn-main:hover {
+  background: #0B5A8F;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(30, 111, 163, 0.4);
+}
+
+.hero-btn-ghost {
+  background: transparent;
+  color: var(--hero-text);
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1.5px solid rgba(212, 212, 212, 0.35);
+}
+
+.hero-btn-ghost:hover {
+  background: rgba(212, 212, 212, 0.08);
+  border-color: rgba(212, 212, 212, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   HERO KPI CARDS
+   ================================================================ */
+
+.hero-kpis {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.kpi-card {
+  background: var(--hero-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--hero-border-alt);
+  border-radius: var(--r-lg);
+  padding: 1.5rem 1.6rem;
+  min-width: 140px;
+  text-align: center;
+  transition: all var(--dur-base) var(--ease-smooth);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.kpi-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.kpi-val {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--hero-text);
+  line-height: 1;
+}
+
+.kpi-val sup {
+  font-size: 1rem;
+  font-weight: 600;
+  vertical-align: super;
+}
+
+.kpi-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(212, 212, 212, 0.85);
+  margin-top: 0.35rem;
+}
+
+.kpi-delta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4rem;
+  padding: 0.13rem 0.45rem;
+  border: 1px solid var(--hero-border);
+  border-radius: var(--r-pill);
+  background: rgba(106, 102, 97, 0.24);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--hero-text);
+}
+
+/* ================================================================
+   HERO VISUAL ELEMENT
+   ================================================================ */
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.15));
+  transition: transform var(--dur-base) var(--ease-smooth),
+              box-shadow var(--dur-base) var(--ease-smooth);
+}
+
+.hero-image:hover {
+  transform: translateY(5px) scale(1.015);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.45);
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+   ================================================================ */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2.5rem 2rem 1.5rem;
+  }
+
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+    bottom: 1rem;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-text,
+  .hero-visual {
+    grid-column: 1;
+  }
+
+  .hero-kpis {
+    grid-column: 1;
+    margin-top: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-btns {
+    gap: 0.5rem;
+  }
+
+  .hero-btn-main,
+  .hero-btn-ghost {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  .kpi-card {
+    min-width: 110px;
+    padding: 1.2rem 1.2rem;
+  }
+
+  .kpi-val {
+    font-size: 1.5rem;
+  }
+
+  .hero-visual {
+    margin-top: 1rem;
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.75rem 1.25rem 1rem;
+  }
+
+  .hero-logo {
+    width: 70px;
+    height: 70px;
+    bottom: 0.75rem;
+    right: 1rem;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-kpis {
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .kpi-card {
+    min-width: 100px;
+    padding: 1rem 0.9rem;
+  }
+
+  .kpi-val {
+    font-size: 1.3rem;
+  }
+}
+ 

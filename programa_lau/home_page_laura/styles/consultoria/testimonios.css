@@ -1,0 +1,90 @@
+@import url("../general.css");
+
+/* ================================================================
+   TESTIMONIOS — Grid de testimonios
+   ================================================================ */
+.testimonials-scroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  overflow: hidden; /* Remover scroll horizontal */
+}
+
+.testi-card {
+  width: 100%;
+  min-height: 180px;
+  background: var(--surface-subtle);
+  border: 1.5px solid rgba(107,102,97,0.25);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--dur-base) var(--ease-smooth);
+}
+.testi-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.75rem; right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(47,140,201,0.1);
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(47,140,201,0.2); }
+
+.stars { color: #f59e0b; font-size: 0.75rem; margin-bottom: 0.6rem; letter-spacing: 0.05em; }
+
+.testi-text {
+  font-size: 0.9rem;
+  color: var(--blue-ink);
+  font-style: italic;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.testi-author { display: flex; align-items: center; gap: 0.6rem; }
+
+.testi-av {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: white;
+}
+.testi-av.c1 { background: linear-gradient(135deg, #1E6FA3, #2F8CC9); }
+.testi-av.c2 { background: linear-gradient(135deg, #0A8C5C, #10b981); }
+.testi-av.c3 { background: linear-gradient(135deg, #7C3AED, #a78bfa); }
+.testi-av.c4 { background: linear-gradient(135deg, #D97706, #fbbf24); }
+
+.testi-name strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--blue-ink); }
+.testi-name span   { font-size: 0.72rem; color: var(--gray-text); }
+
+/* Responsive para simetría */
+@media (max-width: 768px) {
+  .testimonials-scroll {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .testi-card {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-scroll {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}

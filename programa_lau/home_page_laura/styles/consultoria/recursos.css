@@ -1,0 +1,62 @@
+@import url("../general.css");
+
+/* ================================================================
+   RESOURCES LIST
+   ================================================================ */
+.resources-list { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.res-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface-subtle);
+  border: 1.5px solid rgba(107,102,97,0.25);
+  border-radius: var(--r-md);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-smooth);
+}
+.res-item:hover { background: white; box-shadow: var(--shadow-md); border-color: rgba(47,140,201,0.2); transform: translateX(4px); }
+
+.res-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--r-pill);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.res-badge.pdf     { background: rgba(220,38,38,0.1);   color: var(--danger); }
+.res-badge.video   { background: rgba(124,58,237,0.1);  color: #7C3AED; }
+.res-badge.guide   { background: rgba(10,140,92,0.1);   color: var(--success); }
+.res-badge.webinar { background: rgba(217,119,6,0.1);   color: var(--warning); }
+
+.res-info { flex: 1; min-width: 0; }
+.res-info strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--blue-ink); margin-bottom: 0.12rem; }
+.res-info span   { font-size: 0.75rem; color: var(--gray-text); }
+
+.res-arrow {
+  color: var(--blue-corp);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all var(--dur-base);
+  flex-shrink: 0;
+}
+.res-item:hover .res-arrow { opacity: 1; transform: translateX(0); }
+
+/* Responsive para simetría */
+@media (max-width: 768px) {
+  .res-item {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+  .res-info strong {
+    font-size: 0.8rem;
+  }
+  .res-info span {
+    font-size: 0.7rem;
+  }
+}

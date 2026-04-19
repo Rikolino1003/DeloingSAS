@@ -1,0 +1,106 @@
+@import url("general.css");
+
+/* ================================================================
+   SERVICE TABS
+   ================================================================ */
+.service-tabs {
+  display: flex;
+  border-bottom: 1.5px solid rgba(107,102,97,0.25);
+  margin-bottom: 1rem;
+  gap: 0;
+}
+
+.service-tab {
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--gray-text);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+  user-select: none;
+}
+.service-tab:hover  { color: var(--blue-corp); }
+.service-tab.active { color: var(--blue-corp); border-bottom-color: var(--blue-corp); }
+
+.service-panels > div { display: none; }
+.service-panels > div.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  align-items: start; /* Asegura alineación simétrica */
+}
+
+@media (max-width: 768px) {
+  .service-panels > div.active {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Service Items */
+.srv-item {
+  background: var(--surface-subtle);
+  border: 1.5px solid rgba(107,102,97,0.25);
+  border-radius: var(--r-lg);
+  padding: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  transition: all var(--dur-slow) var(--ease-expo);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.srv-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 1rem; bottom: 1rem;
+  width: 3px;
+  background: linear-gradient(180deg, #6B6661, #8B8581);
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
+  opacity: 0;
+  transition: opacity var(--dur-base);
+}
+.srv-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(107,102,97,0.4); background: white; }
+.srv-item:hover::before { opacity: 1; }
+
+.srv-icon {
+  width: 42px; height: 42px;
+  flex-shrink: 0;
+  background: rgba(30,111,163,0.15);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background var(--dur-base), transform var(--dur-base) var(--ease-expo);
+  color: #1E6FA3;
+}
+.srv-item:hover .srv-icon { background: rgba(30,111,163,0.25); transform: scale(1.08); }
+
+.srv-text h4 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blue-ink);
+  margin-bottom: 0.3rem;
+}
+.srv-text p {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* Responsive para simetría */
+@media (max-width: 768px) {
+  .service-panels > div.active {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .srv-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
